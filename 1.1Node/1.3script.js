@@ -26,7 +26,7 @@ console.log(math.div(6,3));
 // 2
 
 // from file of different folder
-const another_file=require("../temp/temp");
+const another_file=require("../../../temp/temp");
 
 console.log(another_file);
 // { name: 'taanisha', age: '18' }
