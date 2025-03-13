@@ -4,6 +4,8 @@ const path= require("path");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"/views"));
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,"public")));
 
 const port=3000;
 app.listen(port,()=>{
@@ -17,3 +19,7 @@ app.get("/ig/:username",(req,res)=>{
     let {username}=req.params;
     res.render("home.ejs",{username,followers});
 })
+
+
+// using static files
+// app.use(express.static("public")); folder name
