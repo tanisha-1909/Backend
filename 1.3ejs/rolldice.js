@@ -4,7 +4,7 @@ const path=require("path");
 
 const port=3000;
 app.listen(port,()=>{
-    console.log("listening to port ");
+    console.log("listening to portt");
 });
 
 app.set("view engine","ejs");
