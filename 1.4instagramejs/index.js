@@ -13,7 +13,7 @@ app.get("/",(req,res)=>{
     res.send("you are on home page");
 })
 app.get("/ig/:username",(req,res)=>{
-    // let username={username};
+    const followers=['adam','steve','bob','herry'];
     let {username}=req.params;
-    res.render("home.ejs",{username});
+    res.render("home.ejs",{username,followers});
 })
