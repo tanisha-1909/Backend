@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>User Database</h2>
+
+    <% for(person of data){ %>
+        <ul >
+            <li > <b>Username:</b> <%=person.username %> </li> 
+            <li > <b> Email:</b> <%=person.email %> </li>
+            <li > <b>Id:</b> <%=person.id %> </li>
+        </ul>
+        <form method="get" action="/user/<%= person.id%>/edit">
+            <button style="background-color: tomato;">Edit Username</button>
+        </form>
+    <% } %>
+</body>
+</html>
+
