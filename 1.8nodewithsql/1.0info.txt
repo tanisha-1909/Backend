@@ -1,0 +1,9 @@
+to set up mysql in cli
+write in terminal
+
+cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+ .\mysql -u "root" -p   
+ and then enter password
+
+ source C:/Users/Tanisha/Desktop/Backend/1.8nodewithsql/sch
+ema.sql;
