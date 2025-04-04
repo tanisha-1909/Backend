@@ -43,20 +43,60 @@ const app=express();
 
 
 // --------utility middleware(logger)
-app.use((req,res,next)=>{
-    console.log(req.method, req.hostname , req.path);
-    next();
-})
+// app.use((req,res,next)=>{
+//     console.log(req.method, req.hostname , req.path);
+//     next();
+// })
 // GET localhost / (o/p)
+// ------------
+
+// ------------middleware for specific route
+app.use("/test", (req,res,next)=>{
+    console.log("only for test")
+    next();
+});
+
+//---------------- api token as query string
+// http://localhost:3000/api?token=giveaccess
+app.use("/api",(req,res,next)=>{
+    let {token} = req.query;
+    if(token=="giveaccess"){
+        next();
+    }
+    else res.send("ACCESS DENIED");
+})
 
 app.listen("3000",()=>{
     console.log("server listening to port");
-})
+});
 
 app.get("/", (req,res)=>{
     res.send("I am root");
-})
+});
 
 app.get("/test" , (req,res)=>{
     res.send("this is test page");
 })
+
+app.get("/api", (req,res)=>{
+    res.send("data");
+} )
+// 404
+app.use((req,res)=>{
+    res.status(404).send("Page Not found");
+})
+
+
+// passing middleware as function
+
+const checktoken=(req,res,next)=>{
+    let {token} = req.query;
+    if(token=="giveaccess"){
+        next();
+    }
+    else res.send("ACCESS DENIED");
+}
+
+app.get("/api",checktoken, (req,res)=>{
+    res.send("data");
+} )
