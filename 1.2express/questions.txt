@@ -1,0 +1,15 @@
+work of express:
+
+listen for incoming request
+parse
+match response with routes
+response
+
+- it is server side programming
+
+
+2. ports- to exchange info between web server and web client
+
+3. routing- process to select a path
+
+4.http://localhost:3000/search?q=mango
