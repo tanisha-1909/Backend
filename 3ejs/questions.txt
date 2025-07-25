@@ -1,0 +1,17 @@
+ejs -embedded javascript templates
+fixed layout to generate various outputs by adding different different operations
+
+
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"/views"));
+
+//for static files ex: style.css
+app.use(express.static(path.join(__dirname,"public")));
+
+ejs allows to send a complete file as a response
+res.render("home.ejs")
+
+
+<!--interpolation syntax - embedding expression and outputs the value-->
+<h3><%= 1+2 %></h3>
+<h4><%="tanisha".toUpperCase() %></h4>
