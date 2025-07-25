@@ -13,3 +13,8 @@ post- submit new data
 put- update exisiting data
 patch- update existing data partially
 delete- delete data
+
+
+app.use(methodOverride('_method'))
+ is used in Express.js applications to allow HTTP methods
+  like PUT and DELETE to be used in HTML forms
