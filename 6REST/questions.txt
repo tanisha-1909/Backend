@@ -1,0 +1,15 @@
+REST- representation state transfer
+set of rules used for creating web services(api)
+used to perform crud operations
+
+rules:
+1. use nouns instead of verbs in api end point name
+/deleteuser is wrong
+/user and send delete requests
+
+
+get- retrieve resource
+post- submit new data
+put- update exisiting data
+patch- update existing data partially
+delete- delete data
