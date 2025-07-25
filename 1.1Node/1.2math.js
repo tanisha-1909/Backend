@@ -9,6 +9,8 @@ const mul=(a,b)=>{
 }
 
 // module.exports=123;
+// in another file
+//const someValue= require("./math")
 
 let obj={
     sum:sum,
